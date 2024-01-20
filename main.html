@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>#Marryme</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="/assets/proposal.gif" alt="Animated GIF">
+        <div class="button-container">
+            <button id="yes-button">Oh my god YES</button>
+            <button id="no-button">Hmmnn ...</button>
+        </div>
+
+    </div>
+    <script>
+
+        const yesButton = document.getElementById("yes-button");
+        yesButton.addEventListener("click", () => {
+            window.open("second.html", "_blank");
+        });
+
+        const noButton = document.getElementById("no-button");
+        function moveButton() {
+            const randomX = Math.random() * 100 - 50; // Generate random X position within 50% of viewport width
+            const randomY = Math.random() * 100 - 50; // Generate random Y position within 50% of viewport height
+
+            noButton.style.transform = `translate(${randomX}vw, ${randomY}vh)`;
+            noButton.style.width = `${randomWidth}px`;
+            noButton.style.height = `${randomHeight}px`;
+        }
+
+        noButton.addEventListener("mouseover", moveButton);
+
+        // Initial movement
+        moveButton();
+
+    </script>
+</body>
+
+</html>
